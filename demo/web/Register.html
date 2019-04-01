@@ -1,0 +1,64 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>用户注册页面</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" charset="UTF-8"/>
+
+    <script language="javascript">
+        function checkvalid2()
+        {
+            var strmg=register.username.value;
+            var pass1=register.pwd1.value;
+            var pass2=register.pwd2.value;
+
+            if(strmg=="" ||  pass1=="" || pass2=="")
+            {
+                alert("用户名或密码为空！请输入用户名和密码...");
+//login.pwd.value=" ";
+//return false;
+                return false;
+            }
+            else if(pass1!=pass2)
+            {
+                alert("两次输入密码不同！请重新输入...");
+//login.pwd.value=" ";
+                return false;
+            }
+            else
+                return true;
+        }
+
+    </script>
+</head>
+
+<body>
+
+
+
+
+        <div id="login_frame">
+            <p style="background-position: center;font-weight: bold">USER SYSTEM</p>
+            <form method="post" action="RegistChecker.jsp" name="Register" id="Register">
+                <p><label class="label_input">用户名</label><input type="text" name="username" value="" class="text_field" onchange="checkvalid2()" required/></p>
+                <p><label class="label_input">密码</label><input type="password" name="password" value="" class="text_field" onchange="checkvalid2()" required/></p>
+                <div id="login_control">
+                    <input type="submit" id="btn_login" onclick="return checkvalid2()" value="注册"/>
+
+                </div>
+            </form>
+        </div>
+
+
+        <!--<h3 align="center"> 用户注册</h3>
+        用&nbsp;户&nbsp;名：<Input type="text" name="username"  id="username" size="12" style="width:150" onChange="checkvalid2()">*<br>
+        密&nbsp;&nbsp;&nbsp;码：<Input  id="pass1" type="password" name="password" maxlength=8 size="12" style="width:150" onChange="checkvalid()2"  >*<br>
+        确&nbsp;认密码：<Input id="pass2" type="password" name="pwd2" maxlength=8 size="12" style="width:150" onChange="checkvalid2()" >*<br>
+        &lt;!&ndash;<Input type="submit"  value="注册" onClick="return checkvalid2()"> &ndash;&gt;
+
+        <input id="checkSave" type="checkbox">是否保存密码<br>
+        <Input type="submit"  value="注册" onClick="return checkvalid2()">
+
+    </form>
+-->
+</body>
+</html>
